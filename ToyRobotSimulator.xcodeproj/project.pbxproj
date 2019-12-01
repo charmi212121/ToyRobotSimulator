@@ -10,6 +10,8 @@
 		BA7EF12723939BA80013789F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EF12623939BA80013789F /* Constants.swift */; };
 		BA7EF12923939C9C0013789F /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EF12823939C9C0013789F /* Direction.swift */; };
 		BA7EF12B23939CA20013789F /* Robot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EF12A23939CA20013789F /* Robot.swift */; };
+		BA7EF12E2393C3570013789F /* LuckiestGuy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA7EF12D2393C3570013789F /* LuckiestGuy-Regular.ttf */; };
+		BA7EF1312393F5B00013789F /* RoundedCornersButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EF1302393F5B00013789F /* RoundedCornersButton.swift */; };
 		BA873F8A2392A7B1003427CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA873F892392A7B1003427CF /* AppDelegate.swift */; };
 		BA873F8C2392A7B1003427CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA873F8B2392A7B1003427CF /* SceneDelegate.swift */; };
 		BA873F8E2392A7B1003427CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA873F8D2392A7B1003427CF /* ViewController.swift */; };
@@ -33,6 +35,8 @@
 		BA7EF12623939BA80013789F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BA7EF12823939C9C0013789F /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
 		BA7EF12A23939CA20013789F /* Robot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Robot.swift; sourceTree = "<group>"; };
+		BA7EF12D2393C3570013789F /* LuckiestGuy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LuckiestGuy-Regular.ttf"; sourceTree = "<group>"; };
+		BA7EF1302393F5B00013789F /* RoundedCornersButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersButton.swift; sourceTree = "<group>"; };
 		BA873F862392A7B1003427CF /* ToyRobotSimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToyRobotSimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA873F892392A7B1003427CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA873F8B2392A7B1003427CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +68,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA7EF12C2393C3410013789F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BA7EF12D2393C3570013789F /* LuckiestGuy-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		BA7EF12F2393F5820013789F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA7EF1302393F5B00013789F /* RoundedCornersButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		BA873F7D2392A7B1003427CF = {
 			isa = PBXGroup;
 			children = (
@@ -85,7 +105,9 @@
 		BA873F882392A7B1003427CF /* ToyRobotSimulator */ = {
 			isa = PBXGroup;
 			children = (
+				BA7EF12C2393C3410013789F /* Fonts */,
 				BA873FAB2392A866003427CF /* Model */,
+				BA7EF12F2393F5820013789F /* View */,
 				BA873FAD2392A876003427CF /* Controller */,
 				BA873F892392A7B1003427CF /* AppDelegate.swift */,
 				BA873F8B2392A7B1003427CF /* SceneDelegate.swift */,
@@ -208,6 +230,7 @@
 				BA873F962392A7B4003427CF /* LaunchScreen.storyboard in Resources */,
 				BA873F932392A7B4003427CF /* Assets.xcassets in Resources */,
 				BA873F912392A7B1003427CF /* Main.storyboard in Resources */,
+				BA7EF12E2393C3570013789F /* LuckiestGuy-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA873F8E2392A7B1003427CF /* ViewController.swift in Sources */,
+				BA7EF1312393F5B00013789F /* RoundedCornersButton.swift in Sources */,
 				BA873F8A2392A7B1003427CF /* AppDelegate.swift in Sources */,
 				BA873F8C2392A7B1003427CF /* SceneDelegate.swift in Sources */,
 				BA7EF12923939C9C0013789F /* Direction.swift in Sources */,

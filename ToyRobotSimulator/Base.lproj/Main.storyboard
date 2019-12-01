@@ -1,24 +1,179 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="LuckiestGuy-Regular.ttf">
+            <string>LuckiestGuy-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ToyRobotSimulator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V9i-Ac-fGA" userLabel="SimulatorView">
+                                <rect key="frame" x="0.0" y="64" width="414" height="357.33333333333331"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TableTop" translatesAutoresizingMaskIntoConstraints="NO" id="gnk-2w-kuM">
+                                        <rect key="frame" x="28.333333333333343" y="0.0" width="357.33333333333326" height="357.33333333333331"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="gnk-2w-kuM" secondAttribute="height" multiplier="1:1" id="fxL-Da-k4Q"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ToyRobot" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fDD-hD-HmV" userLabel="Robot">
+                                        <rect key="frame" x="183" y="164" width="44" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="gnk-2w-kuM" firstAttribute="top" secondItem="V9i-Ac-fGA" secondAttribute="top" id="MpN-AA-u1f"/>
+                                    <constraint firstItem="gnk-2w-kuM" firstAttribute="centerX" secondItem="V9i-Ac-fGA" secondAttribute="centerX" id="T36-f7-g2W"/>
+                                    <constraint firstAttribute="bottom" secondItem="gnk-2w-kuM" secondAttribute="bottom" id="rZp-aB-dZ1"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P7H-zk-ucq" userLabel="InputControlsView">
+                                <rect key="frame" x="0.0" y="421.33333333333326" width="414" height="420.66666666666674"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v7k-aR-PMI" userLabel="Position Picker View">
+                                        <rect key="frame" x="47" y="0.0" width="320" height="183"/>
+                                    </pickerView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="yck-MD-0yH" userLabel="Controls Stack View">
+                                        <rect key="frame" x="132" y="183.00000000000006" width="150" height="237.66666666666669"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tq5-Wc-jgq" customClass="RoundedCornersButton" customModule="ToyRobotSimulator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="50.333333333333336"/>
+                                                <color key="backgroundColor" red="0.66711550925838436" green="0.58910624752146645" blue="0.83916026349999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" name="LuckiestGuy-Regular" family="Luckiest Guy" pointSize="17"/>
+                                                <state key="normal" title="Place">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="18"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="place:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zxe-RH-euQ"/>
+                                                </connections>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="7iw-tO-4gf">
+                                                <rect key="frame" x="0.0" y="62.333333333333258" width="150" height="50.333333333333343"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vrt-Br-mAe" customClass="RoundedCornersButton" customModule="ToyRobotSimulator" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="69" height="50.333333333333336"/>
+                                                        <color key="backgroundColor" red="0.66711550925838436" green="0.58910624752146645" blue="0.83916026349999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="LuckiestGuy-Regular" family="Luckiest Guy" pointSize="17"/>
+                                                        <state key="normal" title="Left">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="18"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="rotate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5CX-e8-TcP"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXc-Nz-naY" customClass="RoundedCornersButton" customModule="ToyRobotSimulator" customModuleProvider="target">
+                                                        <rect key="frame" x="81" y="0.0" width="69" height="50.333333333333336"/>
+                                                        <color key="backgroundColor" red="0.66711550925838436" green="0.58910624752146645" blue="0.83916026349999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="LuckiestGuy-Regular" family="Luckiest Guy" pointSize="17"/>
+                                                        <state key="normal" title="Right">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="18"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAp-l7-vXA" customClass="RoundedCornersButton" customModule="ToyRobotSimulator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="124.66666666666664" width="150" height="50.666666666666671"/>
+                                                <color key="backgroundColor" red="0.66711550925838436" green="0.58910624752146645" blue="0.83916026349999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" name="LuckiestGuy-Regular" family="Luckiest Guy" pointSize="17"/>
+                                                <state key="normal" title="Move">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="18"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="move:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FGi-vP-WQa"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVz-5g-nL0" customClass="RoundedCornersButton" customModule="ToyRobotSimulator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="187.33333333333326" width="150" height="50.333333333333343"/>
+                                                <color key="backgroundColor" red="0.66711550925838436" green="0.58910624752146645" blue="0.83916026349999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" name="LuckiestGuy-Regular" family="Luckiest Guy" pointSize="17"/>
+                                                <state key="normal" title="Report">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="18"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="report:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y81-Ib-cBl"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="tyX-Zb-pMA"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="yck-MD-0yH" firstAttribute="top" secondItem="v7k-aR-PMI" secondAttribute="bottom" id="8jO-hS-ROS"/>
+                                    <constraint firstItem="v7k-aR-PMI" firstAttribute="centerX" secondItem="P7H-zk-ucq" secondAttribute="centerX" id="9dh-EO-Bms"/>
+                                    <constraint firstAttribute="bottom" secondItem="yck-MD-0yH" secondAttribute="bottom" id="Mzf-wz-8rd"/>
+                                    <constraint firstItem="yck-MD-0yH" firstAttribute="centerX" secondItem="P7H-zk-ucq" secondAttribute="centerX" id="QTH-dT-gyb"/>
+                                    <constraint firstItem="v7k-aR-PMI" firstAttribute="top" secondItem="P7H-zk-ucq" secondAttribute="top" id="Y89-4T-NcB"/>
+                                    <constraint firstItem="yck-MD-0yH" firstAttribute="height" secondItem="v7k-aR-PMI" secondAttribute="height" multiplier="1.3" id="YgZ-Nh-EQJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="P7H-zk-ucq" firstAttribute="top" secondItem="V9i-Ac-fGA" secondAttribute="bottom" id="9zD-9g-p7U"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="P7H-zk-ucq" secondAttribute="trailing" id="IX7-0G-PPy"/>
+                            <constraint firstItem="P7H-zk-ucq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JiE-cb-Ir7"/>
+                            <constraint firstItem="V9i-Ac-fGA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="LgI-B0-oSh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="P7H-zk-ucq" secondAttribute="bottom" constant="20" id="Lwu-Df-y6H"/>
+                            <constraint firstItem="V9i-Ac-fGA" firstAttribute="height" secondItem="P7H-zk-ucq" secondAttribute="height" multiplier="0.85" id="UOv-MN-COW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V9i-Ac-fGA" secondAttribute="trailing" id="l1A-Dc-PUN"/>
+                            <constraint firstItem="V9i-Ac-fGA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tCE-d0-HIR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="positionPickerView" destination="v7k-aR-PMI" id="Slw-ZR-J78"/>
+                        <outlet property="robotImage" destination="fDD-hD-HmV" id="oQK-47-Lml"/>
+                        <outlet property="tableTop" destination="gnk-2w-kuM" id="wO9-V5-Wmm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1020" y="141"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="TableTop" width="1536" height="1537"/>
+        <image name="ToyRobot" width="60.333332061767578" height="57.333332061767578"/>
+    </resources>
 </document>
