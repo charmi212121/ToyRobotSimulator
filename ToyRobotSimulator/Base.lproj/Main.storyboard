@@ -97,6 +97,9 @@
                                                                 <real key="value" value="18"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="rotate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="usa-Kh-o0Q"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>

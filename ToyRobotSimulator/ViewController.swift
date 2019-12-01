@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     
     var bottomLeftCornerOfTable : CGPoint = CGPoint.zero
     var oneCellUnit : CGFloat = 0
+    var directionMultiplier : Double = 1
     var robot : Robot!
     
     
@@ -90,9 +91,10 @@ class ViewController: UIViewController {
         bottomLeftCornerOfTable = CGPoint(x: tableTop.frame.minX + halfCellUnit, y: tableTop.frame.maxY - halfCellUnit)
     }
     
-    func updateRobotView(){
+    
+    // Rotates the robot based on the input from the picker view control
+    func updateRobotView() {
         
-        // Rotates the robot based on the input from the picker view control
         UIView.animate(withDuration: 0.25) {
             self.robotImage.transform = CGAffineTransform(rotationAngle:  CGFloat(Constants.Angle.degress_90 * Double(self.selectedDirectionValue)))
         }
@@ -101,10 +103,10 @@ class ViewController: UIViewController {
     }
     
     
-    func updateRobotPostion(){
+    // Calculates and updates the position of the robot based on the
+    // input from the picker view control or other given controls
+    func updateRobotPostion() {
         
-        // Calculates and updates the position of the robot
-        // Based on the input from the picker view control or other given controls
         let goToPostion = CGPoint(x: bottomLeftCornerOfTable.x + (CGFloat(robot.x) * oneCellUnit), y: bottomLeftCornerOfTable.y - (CGFloat(robot.y) * oneCellUnit))
         
         UIView.animate(withDuration: 0.25) {
@@ -136,6 +138,9 @@ class ViewController: UIViewController {
     
     // MARK: Move
     
+    
+    // Moves the robot one unit forward in the
+    // current direction
     @IBAction func move(_ sender: UIButton) {
         
         if !robot.isPlaced {
@@ -151,7 +156,25 @@ class ViewController: UIViewController {
     
     // MARK: Rotate
     
+    // Rotates the robot by 90 degrees either
+    // in clockwise or anticlockwise direction
     @IBAction func rotate(_ sender: UIButton) {
+        
+        if !robot.isPlaced {
+            return
+        }
+        
+        if sender.tag == 1 {
+            robot.rotate(clockwise: true)
+            directionMultiplier = 1
+        } else {
+            robot.rotate(clockwise: false)
+            directionMultiplier = -1
+        }
+        
+        UIView.animate(withDuration: 0.25) {
+            self.robotImage.transform = self.robotImage.transform.rotated(by: CGFloat(Constants.Angle.degress_90 * self.directionMultiplier))
+        }
         
     }
     
