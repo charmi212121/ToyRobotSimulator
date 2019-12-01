@@ -11,24 +11,48 @@ import XCTest
 
 class ToyRobotSimulatorTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var robot = Robot(x: 0, y: 0, direction: .south, isPlaced: true)
+    
+    // MARK: Move Logic Tests
+    
+    // Test the Move Logic of Robot
+    func testMoveTowardsNorth() {
+        robot.direction = .north
+        robot.move()
+        XCTAssertEqual(robot.x, 0)
+        XCTAssertEqual(robot.y, 1)
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testMoveTowardsWest() {
+        robot.direction = .west
+        robot.move()
+        XCTAssertEqual(robot.x, 0)
+        XCTAssertEqual(robot.y, 0)
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testMoveTowardsEast() {
+        robot.direction = .east
+        robot.move()
+        XCTAssertEqual(robot.x, 1)
+        XCTAssertEqual(robot.y, 0)
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    // MARK: Clamp Logic Tests
+    
+    // Test the Clamp Logic of Robot
+    func testOutOfBoundsMove() {
+        robot.direction = .south
+        robot.move()
+        XCTAssertEqual(robot.x, 0)
+        XCTAssertEqual(robot.y, 0)
+    }
+    
+    // MARK: Rotate Logic Tests
+    
+    // Test the Direction Rotation logic of Robot
+    func testRotate() {
+        robot.rotate(clockwise: true)
+        XCTAssertEqual(robot.direction, Direction.west)
     }
 
 }
