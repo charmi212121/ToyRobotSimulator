@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA7EF12723939BA80013789F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EF12623939BA80013789F /* Constants.swift */; };
+		BA7EF12923939C9C0013789F /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EF12823939C9C0013789F /* Direction.swift */; };
+		BA7EF12B23939CA20013789F /* Robot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EF12A23939CA20013789F /* Robot.swift */; };
 		BA873F8A2392A7B1003427CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA873F892392A7B1003427CF /* AppDelegate.swift */; };
 		BA873F8C2392A7B1003427CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA873F8B2392A7B1003427CF /* SceneDelegate.swift */; };
 		BA873F8E2392A7B1003427CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA873F8D2392A7B1003427CF /* ViewController.swift */; };
@@ -27,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA7EF12623939BA80013789F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BA7EF12823939C9C0013789F /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
+		BA7EF12A23939CA20013789F /* Robot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Robot.swift; sourceTree = "<group>"; };
 		BA873F862392A7B1003427CF /* ToyRobotSimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToyRobotSimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA873F892392A7B1003427CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA873F8B2392A7B1003427CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +85,8 @@
 		BA873F882392A7B1003427CF /* ToyRobotSimulator */ = {
 			isa = PBXGroup;
 			children = (
+				BA873FAB2392A866003427CF /* Model */,
+				BA873FAD2392A876003427CF /* Controller */,
 				BA873F892392A7B1003427CF /* AppDelegate.swift */,
 				BA873F8B2392A7B1003427CF /* SceneDelegate.swift */,
 				BA873F8D2392A7B1003427CF /* ViewController.swift */,
@@ -97,6 +105,23 @@
 				BA873FA22392A7B4003427CF /* Info.plist */,
 			);
 			path = ToyRobotSimulatorTests;
+			sourceTree = "<group>";
+		};
+		BA873FAB2392A866003427CF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA7EF12623939BA80013789F /* Constants.swift */,
+				BA7EF12823939C9C0013789F /* Direction.swift */,
+				BA7EF12A23939CA20013789F /* Robot.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA873FAD2392A876003427CF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +228,9 @@
 				BA873F8E2392A7B1003427CF /* ViewController.swift in Sources */,
 				BA873F8A2392A7B1003427CF /* AppDelegate.swift in Sources */,
 				BA873F8C2392A7B1003427CF /* SceneDelegate.swift in Sources */,
+				BA7EF12923939C9C0013789F /* Direction.swift in Sources */,
+				BA7EF12B23939CA20013789F /* Robot.swift in Sources */,
+				BA7EF12723939BA80013789F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +393,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R75B62D5FT;
 				INFOPLIST_FILE = ToyRobotSimulator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -383,6 +412,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R75B62D5FT;
 				INFOPLIST_FILE = ToyRobotSimulator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
