@@ -22,4 +22,11 @@ struct Constants{
         static let maxBounds: Int = size - 1
     }
     
+    
+    // MARK: Angles
+    
+    struct Angle {
+        static let degress_90 = Double.pi / 2
+    }
+    
 }

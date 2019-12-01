@@ -22,13 +22,32 @@ class ViewController: UIViewController {
     
     let pickerViewData = [["0", "1", "2", "3", "4"], ["0", "1", "2", "3", "4"], ["North", "East", "South", "West"]]
     
+    
     var bottomLeftCornerOfTable : CGPoint = CGPoint.zero
     var oneCellUnit : CGFloat = 0
     var robot : Robot!
     
-    var selectedXValue: Int = 0
-    var selectedYValue: Int = 0
-    var selectedDirectionValue: Int = 0
+    
+    var selectedXValue: Int = 0 {
+        willSet {
+            robot.x = newValue
+        }
+    }
+    
+    var selectedYValue: Int = 0 {
+        willSet {
+           robot.y = newValue
+        }
+    }
+    
+    var selectedDirectionValue: Int = 0 {
+        willSet {
+            guard let direction = Direction(rawValue: newValue) else {
+                return
+            }
+            robot.direction = direction
+        }
+    }
     
     
     
@@ -71,6 +90,28 @@ class ViewController: UIViewController {
         bottomLeftCornerOfTable = CGPoint(x: tableTop.frame.minX + halfCellUnit, y: tableTop.frame.maxY - halfCellUnit)
     }
     
+    func updateRobotView(){
+        
+        // Rotates the robot based on the input from the picker view control
+        UIView.animate(withDuration: 0.25) {
+            self.robotImage.transform = CGAffineTransform(rotationAngle:  CGFloat(Constants.Angle.degress_90 * Double(self.selectedDirectionValue)))
+        }
+        
+        updateRobotPostion()
+    }
+    
+    
+    func updateRobotPostion(){
+        
+        // Calculates and updates the position of the robot
+        // Based on the input from the picker view control or other given controls
+        let goToPostion = CGPoint(x: bottomLeftCornerOfTable.x + (CGFloat(robot.x) * oneCellUnit), y: bottomLeftCornerOfTable.y - (CGFloat(robot.y) * oneCellUnit))
+        
+        UIView.animate(withDuration: 0.25) {
+            self.robotImage.center = goToPostion
+        }
+    }
+    
     
     // MARK: Action Methods
     
@@ -79,12 +120,31 @@ class ViewController: UIViewController {
     
     @IBAction func place(_ sender: UIButton) {
         
+        if !robot.isPlaced {
+            robot.isPlaced = true
+            robotImage.isHidden = false
+        }
+        
+        robot.x = selectedXValue
+        robot.y = selectedYValue
+        robot.direction = Direction(rawValue: Int(selectedDirectionValue))!
+        
+        updateRobotView()
+        
     }
     
     
     // MARK: Move
     
     @IBAction func move(_ sender: UIButton) {
+        
+        if !robot.isPlaced {
+            return
+        }
+        
+        robot.move()
+        
+        updateRobotPostion()
         
     }
     
