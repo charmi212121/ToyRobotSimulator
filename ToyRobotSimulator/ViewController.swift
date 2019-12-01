@@ -22,6 +22,10 @@ class ViewController: UIViewController {
     
     let pickerViewData = [["0", "1", "2", "3", "4"], ["0", "1", "2", "3", "4"], ["North", "East", "South", "West"]]
     
+    var bottomLeftCornerOfTable : CGPoint = CGPoint.zero
+    var oneCellUnit : CGFloat = 0
+    var robot : Robot!
+    
     var selectedXValue: Int = 0
     var selectedYValue: Int = 0
     var selectedDirectionValue: Int = 0
@@ -33,7 +37,14 @@ class ViewController: UIViewController {
         setup()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        calculate()
+    }
+    
+    
     // MARK: Custom Methods
+    
     
     func setup() {
     
@@ -42,6 +53,22 @@ class ViewController: UIViewController {
         // and data source
         positionPickerView.dataSource = self
         
+        // Initialise the robot
+        robot = Robot()
+        
+        // Hide the robot Image initially
+        robotImage.isHidden = true
+    }
+    
+    func calculate() {
+        
+        // Calculate the size of one cell unit
+        oneCellUnit = tableTop.frame.size.width / CGFloat(Constants.Grid.size)
+       
+        let halfCellUnit = oneCellUnit * 0.5
+        
+        // Calculate the South-West coordinate of the Tabletop
+        bottomLeftCornerOfTable = CGPoint(x: tableTop.frame.minX + halfCellUnit, y: tableTop.frame.maxY - halfCellUnit)
     }
     
     
