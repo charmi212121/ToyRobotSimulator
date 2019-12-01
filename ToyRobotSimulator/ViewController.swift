@@ -18,6 +18,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var positionPickerView: UIPickerView!
     
     
+    @IBOutlet weak var leftButton: UIButton!
+    @IBOutlet weak var rightButton: UIButton!
+    @IBOutlet weak var moveButton: UIButton!
+    @IBOutlet weak var reportButton: UIButton!
+    
+    
+    
     // MARK: Variables and Properties
     
     let pickerViewData = [["0", "1", "2", "3", "4"], ["0", "1", "2", "3", "4"], ["North", "East", "South", "West"]]
@@ -78,6 +85,9 @@ class ViewController: UIViewController {
         
         // Hide the robot Image initially
         robotImage.isHidden = true
+        
+        // Disable all the other buttons except place button
+        changeButtonsState(to: false)
     }
     
     func calculate() {
@@ -129,6 +139,14 @@ class ViewController: UIViewController {
     }
     
     
+    func changeButtonsState(to enabled: Bool) {
+        leftButton.isEnabled = enabled
+        rightButton.isEnabled = enabled
+        moveButton.isEnabled = enabled
+        reportButton.isEnabled = enabled
+    }
+    
+    
     // MARK: Action Methods
     
     
@@ -139,6 +157,7 @@ class ViewController: UIViewController {
         if !robot.isPlaced {
             robot.isPlaced = true
             robotImage.isHidden = false
+            changeButtonsState(to: true)
         }
         
         robot.x = selectedXValue
@@ -156,15 +175,8 @@ class ViewController: UIViewController {
     // Moves the robot one unit forward in the
     // current direction
     @IBAction func move(_ sender: UIButton) {
-        
-        if !robot.isPlaced {
-            return
-        }
-        
         robot.move()
-        
         updateRobotPostion()
-        
     }
     
     
@@ -173,10 +185,6 @@ class ViewController: UIViewController {
     // Rotates the robot by 90 degrees either
     // in clockwise or anticlockwise direction
     @IBAction func rotate(_ sender: UIButton) {
-        
-        if !robot.isPlaced {
-            return
-        }
         
         if sender.tag == 1 {
             robot.rotate(clockwise: true)
@@ -195,13 +203,7 @@ class ViewController: UIViewController {
     // MARK: Report
     
     @IBAction func report(_ sender: UIButton) {
-        
-        if !robot.isPlaced {
-            return
-        }
-               
         showReport()
-        
     }
     
 }
