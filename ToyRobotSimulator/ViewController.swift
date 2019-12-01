@@ -114,6 +114,20 @@ class ViewController: UIViewController {
         }
     }
     
+    // Present the current coordinates & direction info of the
+    // robot in an alert box
+    func showReport() {
+        
+        let alert = UIAlertController(title: "The Robot is currently at", message: robot.description, preferredStyle: .alert)
+        let dismissAction = UIAlertAction(title: "Dismiss", style: .default) { (_) in
+            alert.dismiss(animated: true, completion: nil)
+        }
+        
+        alert.addAction(dismissAction)
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
     
     // MARK: Action Methods
     
@@ -181,6 +195,12 @@ class ViewController: UIViewController {
     // MARK: Report
     
     @IBAction func report(_ sender: UIButton) {
+        
+        if !robot.isPlaced {
+            return
+        }
+               
+        showReport()
         
     }
     
