@@ -12,6 +12,7 @@
 		BA7EF12B23939CA20013789F /* Robot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EF12A23939CA20013789F /* Robot.swift */; };
 		BA7EF12E2393C3570013789F /* LuckiestGuy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA7EF12D2393C3570013789F /* LuckiestGuy-Regular.ttf */; };
 		BA7EF1312393F5B00013789F /* RoundedCornersButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EF1302393F5B00013789F /* RoundedCornersButton.swift */; };
+		BA7EF133239438BF0013789F /* ViewController+PickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EF132239438BF0013789F /* ViewController+PickerViewDelegate.swift */; };
 		BA873F8A2392A7B1003427CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA873F892392A7B1003427CF /* AppDelegate.swift */; };
 		BA873F8C2392A7B1003427CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA873F8B2392A7B1003427CF /* SceneDelegate.swift */; };
 		BA873F8E2392A7B1003427CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA873F8D2392A7B1003427CF /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 		BA7EF12A23939CA20013789F /* Robot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Robot.swift; sourceTree = "<group>"; };
 		BA7EF12D2393C3570013789F /* LuckiestGuy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LuckiestGuy-Regular.ttf"; sourceTree = "<group>"; };
 		BA7EF1302393F5B00013789F /* RoundedCornersButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersButton.swift; sourceTree = "<group>"; };
+		BA7EF132239438BF0013789F /* ViewController+PickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+PickerViewDelegate.swift"; sourceTree = "<group>"; };
 		BA873F862392A7B1003427CF /* ToyRobotSimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToyRobotSimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA873F892392A7B1003427CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA873F8B2392A7B1003427CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				BA873F892392A7B1003427CF /* AppDelegate.swift */,
 				BA873F8B2392A7B1003427CF /* SceneDelegate.swift */,
 				BA873F8D2392A7B1003427CF /* ViewController.swift */,
+				BA7EF132239438BF0013789F /* ViewController+PickerViewDelegate.swift */,
 				BA873F8F2392A7B1003427CF /* Main.storyboard */,
 				BA873F922392A7B4003427CF /* Assets.xcassets */,
 				BA873F942392A7B4003427CF /* LaunchScreen.storyboard */,
@@ -248,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA7EF133239438BF0013789F /* ViewController+PickerViewDelegate.swift in Sources */,
 				BA873F8E2392A7B1003427CF /* ViewController.swift in Sources */,
 				BA7EF1312393F5B00013789F /* RoundedCornersButton.swift in Sources */,
 				BA873F8A2392A7B1003427CF /* AppDelegate.swift in Sources */,

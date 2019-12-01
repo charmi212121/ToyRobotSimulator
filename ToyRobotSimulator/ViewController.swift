@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
     // MARK: Outlets
     
     @IBOutlet weak var tableTop: UIImageView!
@@ -17,8 +18,29 @@ class ViewController: UIViewController {
     @IBOutlet weak var positionPickerView: UIPickerView!
     
     
+    // MARK: Variables and Properties
+    
+    let pickerViewData = [["0", "1", "2", "3", "4"], ["0", "1", "2", "3", "4"], ["North", "East", "South", "West"]]
+    
+    var selectedXValue: Int = 0
+    var selectedYValue: Int = 0
+    var selectedDirectionValue: Int = 0
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+    }
+    
+    // MARK: Custom Methods
+    
+    func setup() {
+    
+        // Set self to be the delegate of the picker view events
+        positionPickerView.delegate = self
+        // and data source
+        positionPickerView.dataSource = self
         
     }
     
