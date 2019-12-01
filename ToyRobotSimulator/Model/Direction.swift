@@ -17,4 +17,9 @@ enum Direction: Int {
     
     case north, east, south, west
     
+    
+    // MARK: Stored Type Properties
+    
+    static let totalNumberOfDirections = 4
+    
 }
